@@ -4,12 +4,14 @@ name: build
 steps:
   - name: build-hugo
     image: plugins/docker
-    build_args:
-      VERSION=0.59.1
-    username:
-      from_secret: username
-    password:
-      from_secret: password
-    tags:
-      - latest
-      - "0.59.1"
+    settings:
+      repo: ktruckenmiller/hugo
+      build_args:
+        VERSION=0.59.1
+      username:
+        from_secret: username
+      password:
+        from_secret: password
+      tags:
+        - latest
+        - "0.59.1"
